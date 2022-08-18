@@ -1,5 +1,46 @@
-body {
-  background: #FFF;
+@charset "UTF-8";
+/*les couleurs de base*/ /*présentation de la page d'accueil */
+.presentation {
+  padding-bottom: 20px;
+  text-align: center;
+  align-content: center;
+  background-color: rgba(242, 242, 242, 0.7803921569);
+}
+
+.localisation {
+  padding: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  background-color: hsl(207deg, 6%, 90%);
+  box-shadow: 4px 4px 5px hsl(207deg, 6%, 69%) inset;
+}
+.localisation .localisation__element {
+  grid-column: 3/4;
+  grid-row: 1;
+  display: flex;
+  background-color: hsl(207deg, 6%, 90%);
+}
+.localisation input {
+  padding-left: 10px;
+  border: none;
+  background-color: hsl(207deg, 6%, 90%);
+}
+.localisation i {
+  padding-left: 50px;
+}
+
+/*boutons*/
+.btnexplorer {
+  background-image: linear-gradient(to right, hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 4px 4px 5px #ABB0B4;
+  position: relative;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=main.css.map */

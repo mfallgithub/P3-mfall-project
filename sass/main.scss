@@ -1,3 +1,4 @@
-body{
-    background: #FFF;
-}
+@import "utils/variables.scss";
+@import "utils/mixins.scss";
+@import "pages/pageaccueil.scss";
+@import "composants/composants.scss";
