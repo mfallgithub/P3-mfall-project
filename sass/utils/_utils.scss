@@ -1,2 +1,16 @@
 /*map*/
-$font-size: (logo: x-large);
+$font-size: (logo: x-large,article:medium, title:large, body:small, menutext:small,heart:15px, bigheart:30px);
+
+/*placeholders*/
+%flexcenter {
+    display: flex;
+    align-items: center;
+}
+%cardcolumns {
+   display: grid;
+   height: auto;
+   grid-row-gap: 15px;
+   grid-template-columns: 1fr;
+   align-items: flex-end;
+   justify-items: center;
+}

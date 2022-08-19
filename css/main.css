@@ -3,7 +3,23 @@
 /*$primary-color: hsl(267, 66%, 60%) ;
 $secondary-color: hsl(317, 100%, 74%) ;
 $tertiary-color: hsl(165, 56%, 74%);*/
-/*map*/ /*présentation de la page d'accueil */
+/*map*/
+/*placeholders*/
+.step, nav .nav__card {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: grid;
+  height: auto;
+  grid-row-gap: 15px;
+  grid-template-columns: 1fr;
+  align-items: flex-end;
+  justify-items: center;
+}
+
+/*présentation de la page d'accueil */
 .presentation {
   padding-bottom: 20px;
   text-align: center;
@@ -33,6 +49,53 @@ $tertiary-color: hsl(165, 56%, 74%);*/
 }
 .localisation i {
   padding-left: 50px;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  nav h2 {
+    grid-column: 1/4;
+    grid-row: 1;
+  }
+}
+nav .nav__card {
+  width: 100%;
+  border-radius: 15px 15px 15px 15px;
+}
+nav .nav__card i {
+  padding-left: 20x;
+  padding-right: 20px;
+}
+nav .nav__card h2 {
+  font-size: medium;
+  padding-right: 20px;
+}
+
+.card__decoration--accueil {
+  background-color: #f2f2f2;
+  box-shadow: 4px 4px 5px #abb0b4;
+  transition: box-shadow 250ms, scale 50ms 200ms;
+}
+
+.step {
+  justify-content: center;
+  background-color: #9356DC;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding-bottom: 5px;
+  margin-left: -20px;
+  transition: margin-left 500ms;
+  position: absolute;
+  z-index: 3;
+}
+.step p {
+  color: white;
 }
 
 /*boutons*/

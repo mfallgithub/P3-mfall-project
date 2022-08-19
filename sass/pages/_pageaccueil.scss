@@ -29,3 +29,54 @@
         padding-left: 50px;
     }
 }
+nav {
+    @extend %cardcolumns;
+    @media (min-width: 1024px) {
+        grid-auto-flow: row;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    h2 {
+        @media (min-width: 1024px) {
+            grid-column: 1/4;
+            grid-row: 1;
+        }
+    }
+    .nav__card {
+        @extend %flexcenter;
+        width: 100%;
+        border-radius: 15px 15px 15px 15px;
+
+        i {
+            padding-left: 20x;
+            padding-right: 20px;
+        }
+        h2 {
+            font-size: map-get($font-size, article);
+            padding-right: 20px;
+        }
+    }
+}
+
+.card__decoration--accueil {
+    background-color: #f2f2f2;
+    @include shadow-button;
+    transition: box-shadow 250ms, scale 50ms 200ms;
+}
+
+.step {
+    @extend %flexcenter;
+    justify-content: center;
+    background-color: $primary-color;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding-bottom: 5px;
+    margin-left: -20px;
+    transition: margin-left 500ms;
+    position: absolute;
+    z-index: 3;
+    p {
+        color: white;
+    }
+}
