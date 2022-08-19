@@ -1,5 +1,9 @@
 @charset "UTF-8";
-/*les couleurs de base*/ /*présentation de la page d'accueil */
+/*les couleurs de base*/
+/*$primary-color: hsl(267, 66%, 60%) ;
+$secondary-color: hsl(317, 100%, 74%) ;
+$tertiary-color: hsl(165, 56%, 74%);*/
+/*map*/ /*présentation de la page d'accueil */
 .presentation {
   padding-bottom: 20px;
   text-align: center;
@@ -33,14 +37,27 @@
 
 /*boutons*/
 .btnexplorer {
-  background-image: linear-gradient(to right, hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+  background-image: linear-gradient(to right, #FF79DA, #9356DC);
   width: 180px;
   height: 40px;
   border-radius: 20px;
   border: none;
-  box-shadow: 4px 4px 5px #ABB0B4;
+  box-shadow: 4px 4px 5px #abb0b4;
   position: relative;
   z-index: 1;
+}
+
+/*Entête commune et spécifique accueil/menu*/
+header {
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+header p {
+  grid-column: 3/4;
+  font-family: "shrikhand", cursive;
+  font-size: x-large;
 }
 
 /*# sourceMappingURL=main.css.map */

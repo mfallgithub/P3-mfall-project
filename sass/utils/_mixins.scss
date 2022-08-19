@@ -1,3 +1,15 @@
 @mixin shadow-button {
-    box-shadow: 4px 4px 5px #ABB0B4;
+    box-shadow: 4px 4px 5px #abb0b4;
+}
+
+@mixin shadow-button-hover {
+    box-shadow: 10px 10px 20px #343638;
+}
+
+@mixin shrikhand {
+    font-family: "shrikhand", cursive;
+}
+
+@mixin color {
+    color: $color-text;
 }

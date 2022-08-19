@@ -1,0 +1,14 @@
+
+/*Entête commune et spécifique accueil/menu*/
+header{
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-items: center;
+
+    p{
+        grid-column: 3/4;
+        @include shrikhand;
+        font-size: map-get($font-size, logo );
+    }
+}
