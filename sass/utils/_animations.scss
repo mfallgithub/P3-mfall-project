@@ -1,0 +1,27 @@
+/*Boutons*/
+.btnexplorer {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 250ms, scale 50ms 150ms;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        opacity: 0.8;
+        @include shadow-button-hover;
+    }
+}
+
+/*animation pour navigation cards*/
+.card__decoration--accueil {
+    transform: scale(1);
+    transition: scale 50ms 150ms;
+    &:hover {
+        background: lighten($secondary-color, 22%);
+        cursor: pointer;
+        @include shadow-button-hover;
+        transform: scale(1.1);
+        &:hover> i {
+          color: $primary-color;
+        }
+    }
+}

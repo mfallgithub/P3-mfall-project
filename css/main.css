@@ -110,6 +110,15 @@ nav .nav__card h2 {
   z-index: 1;
 }
 
+/*principaux éléments*/
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: large;
+}
+
 /*Entête commune et spécifique accueil/menu*/
 header {
   height: 100px;
@@ -121,6 +130,34 @@ header p {
   grid-column: 3/4;
   font-family: "shrikhand", cursive;
   font-size: x-large;
+}
+
+/*Boutons*/
+.btnexplorer {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 250ms, scale 50ms 150ms;
+}
+.btnexplorer:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  opacity: 0.8;
+  box-shadow: 10px 10px 20px #343638;
+}
+
+/*animation pour navigation cards*/
+.card__decoration--accueil {
+  transform: scale(1);
+  transition: scale 50ms 150ms;
+}
+.card__decoration--accueil:hover {
+  background: #ffe9f9;
+  cursor: pointer;
+  box-shadow: 10px 10px 20px #343638;
+  transform: scale(1.1);
+}
+.card__decoration--accueil:hover:hover > i {
+  color: #9356DC;
 }
 
 /*# sourceMappingURL=main.css.map */
