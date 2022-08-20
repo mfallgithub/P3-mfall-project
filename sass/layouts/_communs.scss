@@ -3,18 +3,35 @@
     box-sizing: border-box;
 }
 h1 {
-    font-size: map-get($font-size, title );
+    font-size: map-get($font-size, title);
+}
+
+body {
+    touch-action: pinch-zoom;
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    margin: auto;
+    margin: auto;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: map-get($font-size, body);
+    a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+    }
 }
 /*Entête commune et spécifique accueil/menu*/
-header{
+header {
     height: 100px;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-items: center;
 
-    p{
+    p {
         grid-column: 3/4;
         @include shrikhand;
-        font-size: map-get($font-size, logo );
+        font-size: map-get($font-size, logo);
     }
 }
