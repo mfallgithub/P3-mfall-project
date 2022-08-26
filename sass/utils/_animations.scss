@@ -25,3 +25,13 @@
         }
     }
 }
+/*Disparition icone coeur page accueil*/
+.heartcontainer {
+    i {
+        opacity: 1;
+        transition: opacity 50ms;
+        &:active {
+            opacity: 0;
+        }
+    }
+}

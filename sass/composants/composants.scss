@@ -1,6 +1,6 @@
 /*boutons*/
 .btnexplorer {
-    background-image: linear-gradient(to right, $secondary-color,$primary-color);
+    background-image: linear-gradient(to right, $secondary-color, $primary-color);
     width: 180px;
     height: 40px;
     border-radius: 20px;
@@ -8,4 +8,40 @@
     @include shadow-button;
     position: relative;
     z-index: 1;
+}
+/*pastille nuveauté*/
+.new {
+    color: green;
+    width: 90px;
+    height: 40px;
+    background-color: $tertiary-color;
+    position: absolute;
+    z-index: 4;
+    top: 20px;
+    right: 20px;
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-left: 225px;
+    }
+    @media (min-width: 992px) {
+        margin-left: 330px;
+    }
+    h2 {
+        padding-left: 10px;
+        top: 20px;
+    }
+}
+/*bouton coeur accueil*/
+.heartcontainer--accueil {
+    width: 10px;
+    height: map-get($font-size, bigheart);
+    align-items: center;
+    justify-content: center;
+    padding-right: 45px;
+    padding-top: 20px;
+    i {
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+        font-size: map-get($font-size, bigheart);
+    }
 }
