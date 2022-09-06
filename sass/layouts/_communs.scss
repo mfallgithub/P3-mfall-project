@@ -35,3 +35,33 @@ header {
         font-size: map-get($font-size, logo);
     }
 }
+
+/****Footer second manner**/
+footer {
+    background-color: #353535;
+    padding: 25px;
+    color: white;
+}
+h3 {
+    font-family: "Shrikhand", "sans-serif";
+    padding: 5px 0 20px 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+ul {
+    //permet de supprimer les "."
+    list-style-type: none;
+    li {
+        padding: 5px 0 5px 0;
+        a {
+            color: white;
+        }
+    }
+}
+
+.fa-utensils {
+    margin-right: 12px;
+}
+.fa-hands-helping {
+    margin-right: 5px;
+}
