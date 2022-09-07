@@ -15,6 +15,11 @@ nav {
   justify-items: center;
 }
 
+.restaucontainer__title, header .menu--header {
+  display: flex;
+  align-items: baseline;
+}
+
 /*présentation de la page d'accueil */
 .presentation {
   padding-bottom: 20px;
@@ -316,6 +321,12 @@ header {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
+  /*****header des menus****/
+}
+header .menu--header {
+  grid-column: 2/5;
+  justify-content: center;
+  height: 100px;
 }
 header p {
   grid-column: 3/4;
@@ -390,6 +401,33 @@ ul li a {
 }
 .heartcontainer i:active {
   opacity: 0;
+}
+
+.restaucontainer {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.img__menu {
+  width: 100%;
+  background-size: cover;
+  height: 300px;
+  object-fit: cover;
+  position: relative;
+  margin-bottom: -3px;
+}
+
+.restaucontainer__title {
+  background-color: #f2f2f2;
+  justify-content: space-between;
+  height: 80px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  position: absolute;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

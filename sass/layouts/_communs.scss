@@ -28,7 +28,13 @@ header {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-items: center;
-
+    /*****header des menus****/
+    .menu--header {
+      grid-column: 2/5;
+      @extend %flexbaseline;
+      justify-content: center;
+      height: 100px;
+    }
     p {
         grid-column: 3/4;
         @include shrikhand;

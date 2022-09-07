@@ -14,3 +14,8 @@ $font-size: (logo: x-large,article:medium, title:large, body:small, menutext:sma
    align-items: flex-end;
    justify-items: center;
 }
+
+%flexbaseline{
+    display: flex;
+    align-items: baseline;
+   } 
