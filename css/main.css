@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /*map*/
 /*placeholders*/
-.step, nav .nav__card {
+.card__menu, .cardgost, .step, nav .nav__card {
   display: flex;
   align-items: center;
 }
 
-nav {
+.menu__choice, nav {
   display: grid;
   height: auto;
   grid-row-gap: 15px;
@@ -247,6 +247,17 @@ nav .nav__card h2 {
   z-index: 1;
 }
 
+.btn {
+  grid-row: 4;
+  padding: 50px;
+}
+.btn__menu {
+  align-items: center;
+  align-content: stretch;
+  display: flex;
+  padding: 20px;
+}
+
 /*pastille nuveauté*/
 .new {
   color: green;
@@ -411,15 +422,6 @@ ul li a {
   align-items: flex-end;
 }
 
-.img__menu {
-  width: 100%;
-  background-size: cover;
-  height: 300px;
-  object-fit: cover;
-  position: relative;
-  margin-bottom: -3px;
-}
-
 .restaucontainer__title {
   background-color: #f2f2f2;
   justify-content: space-between;
@@ -428,6 +430,80 @@ ul li a {
   border-top-right-radius: 35px;
   position: absolute;
   width: 100%;
+  padding-left: 35px;
+  padding-right: 15px;
+}
+.restaucontainer__title h1 {
+  font-family: "shrikhand", cursive;
+}
+
+.img__menu {
+  width: 100%;
+  background-size: cover;
+  height: 300px;
+  object-fit: cover;
+  position: relative;
+  margin-bottom: -3px;
+}
+@media (min-width: 768px) {
+  .img__menu {
+    height: 600px;
+    max-width: 1000px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+  }
+}
+
+.cardgost {
+  width: 40px;
+  height: 20px;
+  margin-right: 250px;
+  border-bottom: 3px solid #99E2D0;
+}
+
+.menu__choice {
+  /* display: grid;
+  height: auto;
+  grid-row-gap: 15px;
+  grid-template-columns: 1fr;
+  align-items: flex-end;
+  justify-items: center;*/
+  grid-auto-flow: row;
+  grid-template-rows: repeat(4, 1fr);
+}
+.menu__choice--price {
+  height: 100%;
+  width: 50px;
+  display: flex;
+  border-radius: 0px 30px 30px 0px;
+  background-color: white;
+  align-items: flex-end;
+  top: 0;
+  margin-left: 10px;
+}
+.menu__choice--text {
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+}
+
+.card__menu {
+  border-radius: 15px 15x 15px 15px;
+  justify-content: space-between;
+  width: 320px;
+  height: 66px;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.card__decoration--menu {
+  background-color: white;
+  box-shadow: 4px 4px 5px #abb0b4;
+}
+.card__decoration--menu:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 20px #343638;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -9,6 +9,18 @@
     position: relative;
     z-index: 1;
 }
+
+.btn {
+    grid-row: 4;
+    padding: 50px;
+    &__menu {
+        align-items: center;
+        align-content: stretch;
+        display: flex;
+        padding: 20px;
+    }
+    
+}
 /*pastille nuveauté*/
 .new {
     color: green;
