@@ -241,6 +241,7 @@ nav .nav__card h2 {
   width: 180px;
   height: 40px;
   border-radius: 20px;
+  color: white;
   border: none;
   box-shadow: 4px 4px 5px #abb0b4;
   position: relative;
@@ -256,6 +257,11 @@ nav .nav__card h2 {
   align-content: stretch;
   display: flex;
   padding: 20px;
+}
+@media (min-width: 768px) {
+  .btn {
+    grid-column: 2;
+  }
 }
 
 /*pastille nuveauté*/
@@ -421,6 +427,12 @@ ul li a {
   justify-content: center;
   align-items: flex-end;
 }
+@media (min-width: 768px) {
+  .restaucontainer {
+    background-color: black;
+    height: 700px;
+  }
+}
 
 .restaucontainer__title {
   background-color: #f2f2f2;
@@ -471,24 +483,68 @@ ul li a {
   grid-auto-flow: row;
   grid-template-rows: repeat(4, 1fr);
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .menu__choice {
+    grid-column: 2;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .menu__choice {
+    grid-row: 3;
+    width: auto;
+  }
+}
 .menu__choice--price {
   height: 100%;
   width: 50px;
+  top: 0;
   display: flex;
   border-radius: 0px 30px 30px 0px;
   background-color: white;
   align-items: flex-end;
-  top: 0;
   margin-left: 10px;
 }
 .menu__choice--text {
+  margin: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
+  width: 232px;
+  transition: transform 500ms ease-in-out;
+}
+.menu__choice--text h2 {
+  font-size: medium;
+  width: auto;
+}
+.menu__choice .textonly {
+  padding-right: 2px;
+}
+.menu__choice .textonly__title {
+  width: auto;
+  position: relative;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu__choice .textonly__description {
+  position: relative;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu__choice .textonly__description p {
+  font-size: small;
+  width: auto;
 }
 
 .card__menu {
-  border-radius: 15px 15x 15px 15px;
+  border-radius: 15px 15px 15px 15px;
   justify-content: space-between;
   width: 320px;
   height: 66px;
@@ -500,10 +556,29 @@ ul li a {
 .card__decoration--menu {
   background-color: white;
   box-shadow: 4px 4px 5px #abb0b4;
+  transition: box-shadow 250ms, scale 50ms 200ms;
 }
 .card__decoration--menu:hover {
   cursor: pointer;
   box-shadow: 10px 10px 20px #343638;
+}
+
+.check {
+  display: flex;
+  background-color: #99E2D0;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  float: right;
+  left: 250px;
+  width: 70px;
+  transform: scaleX(0);
+  transition: transform 400ms;
+  transform-origin: right;
 }
 
 /*# sourceMappingURL=main.css.map */

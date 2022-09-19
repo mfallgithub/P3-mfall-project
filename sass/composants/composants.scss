@@ -4,6 +4,7 @@
     width: 180px;
     height: 40px;
     border-radius: 20px;
+    color: white;
     border: none;
     @include shadow-button;
     position: relative;
@@ -18,6 +19,9 @@
         align-content: stretch;
         display: flex;
         padding: 20px;
+    }
+    @media (min-width: 768px) {
+        grid-column: 2;
     }
     
 }
