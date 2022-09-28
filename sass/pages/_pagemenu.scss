@@ -1,3 +1,24 @@
+/*section propre aux menus*/
+//a faire en dernier lieu dans la session 
+section {
+  background-color: #f2f2f2;
+  justify-items: center;
+  display: grid;
+  grid-template-rows: 350px 350px 350px 350px 350px;
+  height: auto;
+  margin-bottom: -5px;
+  max-width: 100%;
+  @media (min-width: 768px) and (max-width: 991px) {
+    grid-template-columns: 200px 350px 200px;
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
 .restaucontainer {
     height: 300px;
     width: 100%;
@@ -24,6 +45,7 @@
     padding-right: 15px;
     h1 {
         @include shrikhand;
+        font-size: map-get($font-size, logo);
     }
 }
 
@@ -58,7 +80,7 @@
    justify-items: center;*/
     @extend %cardcolumns;
     grid-auto-flow: row;
-    grid-template-rows: repeat(4,1fr);
+    grid-template-rows: repeat(4, 1fr);
     @media (min-width: 768px) and (max-width: 991px) {
         grid-column: 2;
         width: 100%;
@@ -76,6 +98,7 @@
         background-color: white;
         align-items: flex-end;
         margin-left: 10px;
+        transition: transform 500ms ease-in-out;
     }
 
     &--text {
@@ -155,10 +178,28 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     float: right;
-    //height: 100%;
+    height: 100%;
     left: 250px;
     width: 70px;
     transform: scaleX(0);
     transition: transform 400ms;
     transform-origin: right;
+}
+
+.check__animation {
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background-color: white;
+    position: absolute;
+    z-index: 3;
+    @extend %flexcenter;
+    justify-content: center;
+    transform: rotate(-360deg);
+    transition: transform 500ms ease-in-out;
+    overflow: hidden;
+    i {
+        color: $tertiary-color;
+        z-index: 4;
+    }
 }

@@ -19,3 +19,7 @@ $font-size: (logo: x-large,article:medium, title:large, body:small, menutext:sma
     display: flex;
     align-items: baseline;
    } 
+
+
+   /*Condition */
+@if( lightness($color-footer) < 22% ){$color-text:#ffffff;}
