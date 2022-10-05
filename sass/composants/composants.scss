@@ -23,7 +23,6 @@
     @media (min-width: 768px) {
         grid-column: 2;
     }
-    
 }
 /*pastille nuveauté*/
 .new {
@@ -59,5 +58,21 @@
         position: relative;
         z-index: 1;
         font-size: map-get($font-size, bigheart);
+    }
+}
+
+/*Bouton coeur page menu*/
+.heartcontainer--menu {
+    width: 10px;
+    height: map-get($font-size, bigheart);
+    align-items: center;
+    justify-content: center;
+
+    i {
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+        font-size: map-get($font-size, bigheart);
+        right: 50px;
     }
 }

@@ -20,8 +20,8 @@
         cursor: pointer;
         @include shadow-button-hover;
         transform: scale(1.1);
-        &:hover> i {
-          color: $primary-color;
+        &:hover > i {
+            color: $primary-color;
         }
     }
 }
@@ -35,3 +35,126 @@
         }
     }
 }
+/*Apparition coeur coloré page accueil*/
+.heart__accueil {
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+    top: 229px;
+    right: 45px;
+    transition: opacity 1000ms;
+    &:active {
+        opacity: 1;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: map-get($font-size, bigheart);
+        background: linear-gradient($secondary-color, $primary-color);
+        border-radius: 15px 15px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: map-get($font-size, bigheart);
+        background: linear-gradient($secondary-color, $primary-color);
+        border-radius: 20px 20px 0 0;
+        left: -20px;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+    }
+}
+
+/*Disparition icone coeur page menu*/
+.bigheartcontainer {
+    width: 10px;
+    font-size: map-get($font-size, bigheart);
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+    i {
+        opacity: 1;
+        transition: opacity 50ms;
+        &:active {
+            opacity: 0;
+        }
+    }
+}
+/*Apparition coeur coloré page menu*/
+.heart__menu {
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+    top: 17px;
+    transition: opacity 1000ms;
+    right: 59px;
+    &:active {
+        cursor: pointer;
+        opacity: 1;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: map-get($font-size, bigheart);
+        background: linear-gradient($secondary-color, $primary-color);
+        border-radius: 15px 15px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: map-get($font-size, bigheart);
+        background: linear-gradient($secondary-color, $primary-color);
+        border-radius: 20px 20px 0 0;
+        left: -20px;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+    }
+}
+/*Animation bouton menu*/
+.card__menu {
+    &:hover > .menu__choice--text {
+        width: 180px;
+    }
+    &:hover > .menu__choice--price {
+        transform: translateX(-55px);
+    }
+    &:hover > .check {
+        transform: scaleX(1);
+
+        & > .check__animation {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+  /*Keyframes*/
+/*Apparition pagesmenu*/
+@keyframes menu{
+    0%{
+        transform:translateY(+35px);
+        opacity: 0;
+    }
+    100%{
+        transform:translateY(0);
+        opacity: 1;
+    }
+}
+.first{
+    animation: menu $menu-dur $menu-first-delay backwards;
+  
+}
+.second{
+    animation: menu $menu-dur $menu-second-delay  backwards;
+   }
+.third
+{
+    animation: menu $menu-dur $menu-third-delay  backwards;
+ }

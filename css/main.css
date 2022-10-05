@@ -308,6 +308,21 @@ nav .nav__card h2 {
   font-size: 30px;
 }
 
+/*Bouton coeur page menu*/
+.heartcontainer--menu {
+  width: 10px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.heartcontainer--menu i {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+  font-size: 30px;
+  right: 50px;
+}
+
 /*principaux éléments*/
 * {
   box-sizing: border-box;
@@ -420,6 +435,129 @@ ul li a {
 }
 .heartcontainer i:active {
   opacity: 0;
+}
+
+/*Apparition coeur coloré page accueil*/
+.heart__accueil {
+  position: absolute;
+  opacity: 0;
+  z-index: 3;
+  top: 229px;
+  right: 45px;
+  transition: opacity 1000ms;
+}
+.heart__accueil:active {
+  opacity: 1;
+}
+.heart__accueil::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 15px 15px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.heart__accueil::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 20px 20px 0 0;
+  left: -20px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/*Disparition icone coeur page menu*/
+.bigheartcontainer {
+  width: 10px;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  padding-right: 15px;
+}
+.bigheartcontainer i {
+  opacity: 1;
+  transition: opacity 50ms;
+}
+.bigheartcontainer i:active {
+  opacity: 0;
+}
+
+/*Apparition coeur coloré page menu*/
+.heart__menu {
+  position: absolute;
+  opacity: 0;
+  z-index: 3;
+  top: 17px;
+  transition: opacity 1000ms;
+  right: 59px;
+}
+.heart__menu:active {
+  cursor: pointer;
+  opacity: 1;
+}
+.heart__menu::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 15px 15px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.heart__menu::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 20px 20px 0 0;
+  left: -20px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/*Animation bouton menu*/
+.card__menu:hover > .menu__choice--text {
+  width: 180px;
+}
+.card__menu:hover > .menu__choice--price {
+  transform: translateX(-55px);
+}
+.card__menu:hover > .check {
+  transform: scaleX(1);
+}
+.card__menu:hover > .check > .check__animation {
+  transform: rotate(0deg);
+}
+
+/*Keyframes*/
+/*Apparition pagesmenu*/
+@keyframes menu {
+  0% {
+    transform: translateY(35px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.first {
+  animation: menu 1000ms 50ms backwards;
+}
+
+.second {
+  animation: menu 1000ms 500ms backwards;
+}
+
+.third {
+  animation: menu 1000ms 1000ms backwards;
 }
 
 /*section propre aux menus*/
