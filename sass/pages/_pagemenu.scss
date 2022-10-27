@@ -1,24 +1,4 @@
-/*section propre aux menus*/
-//a faire en dernier lieu dans la session 
-section {
-  background-color: #f2f2f2;
-  justify-items: center;
-  display: grid;
-  grid-template-rows: 350px 350px 350px 350px 350px;
-  height: auto;
-  margin-bottom: -5px;
-  max-width: 100%;
-  @media (min-width: 768px) and (max-width: 991px) {
-    grid-template-columns: 200px 350px 200px;
-    grid-template-rows: 1fr;
-    justify-content: space-between;
-  }
-  @media (min-width: 992px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-  }
-}
-
+/*conteneur de menu*/
 .restaucontainer {
     height: 300px;
     width: 100%;
@@ -26,6 +6,7 @@ section {
     justify-content: center;
     align-items: flex-end;
     @media (min-width: 768px) {
+        //mfall à ajouter
         background-color: black;
         height: 700px;
     }
@@ -50,156 +31,170 @@ section {
 }
 
 .img__menu {
-   width: 100%; 
-   background-size: cover;
-   height: 300px;
-   object-fit: cover;
-   position: relative;
-   margin-bottom: -3px;
-   @media (min-width: 768px) {
-    height: 600px;
-    max-width: 1000px;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px ;
-   }
+    width: 100%;
+    background-size: cover;
+    height: 300px;
+    object-fit: cover;
+    position: relative;
+    margin-bottom: -3px;
+    @media (min-width: 768px) {
+        height: 600px;
+        max-width: 1000px;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+    }
 }
+
+/*---------------------------------------------Section--------------------------*/
+/*section propre aux menus*/
+section {
+    background-color: #f2f2f2;
+    justify-items: center;
+    display: grid;
+    //grid-template-rows: 350px 350px 350px 350px 350px;
+    height: auto;
+    margin-bottom: -5px;
+    max-width: 100%;
+    @media (min-width: 768px) and (max-width: 991px) {
+        grid-template-columns: 200px 350px 200px;
+        grid-template-rows: 1fr;
+        justify-content: space-between;
+    }
+    @media (min-width: 992px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .menu__choice {
+        @extend %cardcolumns;
+        grid-auto-flow: row;
+        grid-template-rows: repeat(4, 1fr);
+        @media (min-width: 768px) and (max-width: 991px) {
+            grid-column: 2;
+            width: 100%;
+        }
+        @media (min-width: 992px) {
+            grid-row: 3;
+            width: auto;
+        }
+        &--price {
+            height: 100%;
+            width: 50px;
+            top: 0;
+            display: flex;
+            border-radius: 0px 30px 30px 0px;
+            background-color: white;
+            align-items: flex-end;
+            margin-left: 10px;
+            transition: transform 500ms ease-in-out;
+        }
+
+        &--text {
+            margin: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            //  white-space: nowrap; permet de bien arranger le texte affiché
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 232px;
+            transition: transform 500ms ease-in-out;
+
+            h2 {
+                font-size: map-get($font-size, article);
+                width: auto;
+            }
+        }
+
+        .textonly {
+            padding-right: 2px;
+
+            &__title {
+                width: auto;
+                position: relative;
+                margin: 0;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            &__description {
+                position: relative;
+                margin: 0;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                p {
+                    font-size: map-get($font-size, menutext);
+                    width: auto;
+                }
+            }
+        }
+    }
+    .card__menu {
+        @extend %flexcenter;
+        border-radius: 15px 15px 15px 15px;
+        justify-content: space-between;
+        width: 320px;
+        height: 66px;
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .card__decoration--menu {
+        background-color: white;
+        //contenu de shadow-button dans le mixins
+        //box-shadow: 4px 4px 5px #abb0b4;
+        @include shadow-button;
+        transition: box-shadow 250ms, scale 50ms 200ms;
+        &:hover {
+            cursor: pointer;
+            //contenu de shadow-button-hover dans le mixins
+            @include shadow-button-hover;
+        }
+    }
+
+    .check {
+        display: flex;
+        background-color: $tertiary-color;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        position: absolute;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        float: right;
+        height: 100%;
+        left: 250px;
+        width: 70px;
+        transform: scaleX(0);
+        transition: transform 400ms;
+        transform-origin: right;
+    }
+
+    .check__animation {
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        background-color: white;
+        position: absolute;
+        z-index: 3;
+        @extend %flexcenter;
+        justify-content: center;
+        transform: rotate(-360deg);
+        transition: transform 500ms ease-in-out;
+        overflow: hidden;
+        i {
+            color: $tertiary-color;
+            z-index: 4;
+        }
+    }
+}
+
 .cardgost {
     @extend %flexcenter;
     width: 40px;
     height: 20px;
     margin-right: 250px;
-    border-bottom: 3px solid $tertiary-color;
-}
-.menu__choice {
-    //contenu de %cardcolumns
-   /* display: grid;
-   height: auto;
-   grid-row-gap: 15px;
-   grid-template-columns: 1fr;
-   align-items: flex-end;
-   justify-items: center;*/
-    @extend %cardcolumns;
-    grid-auto-flow: row;
-    grid-template-rows: repeat(4, 1fr);
-    @media (min-width: 768px) and (max-width: 991px) {
-        grid-column: 2;
-        width: 100%;
-    }
-    @media (min-width: 992px) {
-        grid-row: 3;
-        width: auto;
-    }
-    &--price {
-        height: 100%;
-        width: 50px;
-        top: 0;
-        display: flex;
-        border-radius: 0px 30px 30px 0px;
-        background-color: white;
-        align-items: flex-end;
-        margin-left: 10px;
-        transition: transform 500ms ease-in-out;
-    }
-
-    &--text {
-        margin: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        //  white-space: nowrap; permet de bien arranger le texte affiché
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        width: 232px;
-        transition: transform 500ms ease-in-out;
-        
-        h2 {
-            font-size: map-get($font-size, article);
-            width: auto;
-        }
-    }
-
-    .textonly {
-        padding-right: 2px;
-  
-        &__title {
-          width: auto;
-          position: relative;
-          margin: 0;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
-        }
-        &__description {
-          position: relative;
-          margin: 0;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          p {
-            font-size: map-get($font-size, menutext);
-            width: auto;
-          }
-        }
-      }
-
-}
-.card__menu {
-    @extend %flexcenter;
-    border-radius: 15px 15px 15px 15px;
-    justify-content: space-between;
-    width: 320px;
-    height: 66px;
-    position: relative;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.card__decoration--menu {
-    background-color: white;
-    //contenu de shadow-button dans le mixins
-    //box-shadow: 4px 4px 5px #abb0b4;
-    @include shadow-button;
-    transition: box-shadow 250ms, scale 50ms 200ms;
-    &:hover {
-        cursor: pointer;
-        //contenu de shadow-button-hover dans le mixins
-        @include shadow-button-hover;
-    }
-}
-
-.check {
-    display: flex;
-    background-color: $tertiary-color;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    position: absolute;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    float: right;
-    height: 100%;
-    left: 250px;
-    width: 70px;
-    transform: scaleX(0);
-    transition: transform 400ms;
-    transform-origin: right;
-}
-
-.check__animation {
-    height: 20px;
-    width: 20px;
-    border-radius: 50px;
-    background-color: white;
-    position: absolute;
-    z-index: 3;
-    @extend %flexcenter;
-    justify-content: center;
-    transform: rotate(-360deg);
-    transition: transform 500ms ease-in-out;
-    overflow: hidden;
-    i {
-        color: $tertiary-color;
-        z-index: 4;
-    }
+    border-bottom: 3px solid $color-tertiary;
 }

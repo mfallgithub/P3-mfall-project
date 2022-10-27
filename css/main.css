@@ -2,12 +2,12 @@
 /*delay keyframes menu*/
 /*map*/
 /*placeholders*/
-.check__animation, .card__menu, .cardgost, .step, nav .nav__card {
+section .check__animation, section .card__menu, section .cardgost, .step, nav .nav__card {
   display: flex;
   align-items: center;
 }
 
-.menu__choice, nav {
+section .menu__choice, nav {
   display: grid;
   height: auto;
   grid-row-gap: 15px;
@@ -472,21 +472,20 @@ ul li a {
 }
 
 /*Disparition icone coeur page menu*/
-.bigheartcontainer {
-  width: 10px;
-  font-size: 30px;
-  align-items: center;
-  justify-content: center;
-  padding-right: 15px;
-}
-.bigheartcontainer i {
-  opacity: 1;
-  transition: opacity 50ms;
-}
-.bigheartcontainer i:active {
-  opacity: 0;
-}
-
+/*.bigheartcontainer {
+    width: 10px;
+    font-size: map-get($font-size, bigheart);
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+    i {
+        opacity: 1;
+        transition: opacity 50ms;
+        &:active {
+            opacity: 0;
+        }
+    }
+}*/
 /*Apparition coeur coloré page menu*/
 .heart__menu {
   position: absolute;
@@ -560,30 +559,7 @@ ul li a {
   animation: menu 1000ms 1000ms backwards;
 }
 
-/*section propre aux menus*/
-section {
-  background-color: #f2f2f2;
-  justify-items: center;
-  display: grid;
-  grid-template-rows: 350px 350px 350px 350px 350px;
-  height: auto;
-  margin-bottom: -5px;
-  max-width: 100%;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  section {
-    grid-template-columns: 200px 350px 200px;
-    grid-template-rows: 1fr;
-    justify-content: space-between;
-  }
-}
-@media (min-width: 992px) {
-  section {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-  }
-}
-
+/*conteneur de menu*/
 .restaucontainer {
   height: 300px;
   width: 100%;
@@ -631,36 +607,47 @@ section {
   }
 }
 
-.cardgost {
-  width: 40px;
-  height: 20px;
-  margin-right: 250px;
-  border-bottom: 3px solid #99E2D0;
-}
-
-.menu__choice {
-  /* display: grid;
+/*---------------------------------------------Section--------------------------*/
+/*section propre aux menus*/
+section {
+  background-color: #f2f2f2;
+  justify-items: center;
+  display: grid;
+  grid-template-rows: 350px 350px 350px 350px 350px;
   height: auto;
-  grid-row-gap: 15px;
-  grid-template-columns: 1fr;
-  align-items: flex-end;
-  justify-items: center;*/
+  margin-bottom: -5px;
+  max-width: 100%;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  section {
+    grid-template-columns: 200px 350px 200px;
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 992px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+section .menu__choice {
   grid-auto-flow: row;
   grid-template-rows: repeat(4, 1fr);
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .menu__choice {
+  section .menu__choice {
     grid-column: 2;
     width: 100%;
   }
 }
 @media (min-width: 992px) {
-  .menu__choice {
+  section .menu__choice {
     grid-row: 3;
     width: auto;
   }
 }
-.menu__choice--price {
+section .menu__choice--price {
   height: 100%;
   width: 50px;
   top: 0;
@@ -671,7 +658,7 @@ section {
   margin-left: 10px;
   transition: transform 500ms ease-in-out;
 }
-.menu__choice--text {
+section .menu__choice--text {
   margin: 0;
   left: 0;
   display: flex;
@@ -682,14 +669,14 @@ section {
   width: 232px;
   transition: transform 500ms ease-in-out;
 }
-.menu__choice--text h2 {
+section .menu__choice--text h2 {
   font-size: medium;
   width: auto;
 }
-.menu__choice .textonly {
+section .menu__choice .textonly {
   padding-right: 2px;
 }
-.menu__choice .textonly__title {
+section .menu__choice .textonly__title {
   width: auto;
   position: relative;
   margin: 0;
@@ -697,19 +684,24 @@ section {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.menu__choice .textonly__description {
+section .menu__choice .textonly__description {
   position: relative;
   margin: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.menu__choice .textonly__description p {
+section .menu__choice .textonly__description p {
   font-size: small;
   width: auto;
 }
-
-.card__menu {
+section .cardgost {
+  width: 40px;
+  height: 20px;
+  margin-right: 250px;
+  border-bottom: 3px solid #99E2D0;
+}
+section .card__menu {
   border-radius: 15px 15px 15px 15px;
   justify-content: space-between;
   width: 320px;
@@ -718,18 +710,16 @@ section {
   padding-left: 15px;
   padding-right: 15px;
 }
-
-.card__decoration--menu {
+section .card__decoration--menu {
   background-color: white;
   box-shadow: 4px 4px 5px #abb0b4;
   transition: box-shadow 250ms, scale 50ms 200ms;
 }
-.card__decoration--menu:hover {
+section .card__decoration--menu:hover {
   cursor: pointer;
   box-shadow: 10px 10px 20px #343638;
 }
-
-.check {
+section .check {
   display: flex;
   background-color: #99E2D0;
   height: 100%;
@@ -747,8 +737,7 @@ section {
   transition: transform 400ms;
   transform-origin: right;
 }
-
-.check__animation {
+section .check__animation {
   height: 20px;
   width: 20px;
   border-radius: 50px;
@@ -760,7 +749,7 @@ section {
   transition: transform 500ms ease-in-out;
   overflow: hidden;
 }
-.check__animation i {
+section .check__animation i {
   color: #99E2D0;
   z-index: 4;
 }
